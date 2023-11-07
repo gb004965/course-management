@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetCourseDetailsRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                         xmlns="http://in28minutes.com/courses"
+                         xsi:schemaLocation="http://in28minutes.com/courses course-details.xsd">
+    <id>333</id>  <!-- NUMBERS -->
+</GetCourseDetailsRequest>
