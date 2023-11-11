@@ -17,6 +17,7 @@
     </xs:complexType>
   </xs:element>
 
+
   <xs:element name="GetAllCourseDetailsRequest">
     <xs:complexType>
     </xs:complexType>
@@ -39,11 +40,17 @@
   <xs:element name="DeleteCourseDetailsResponse">
     <xs:complexType>
       <xs:sequence>
-        <!-- 1 for success, 0 for failure -->
-        <xs:element name="status" type="xs:int"/>
+        <xs:element name="Status" type="tns:Status"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
+  <xs:simpleType name="Status">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUCCESS"/>
+      <xs:enumeration value="FAILURE"/>
+    </xs:restriction>
+  </xs:simpleType>
 
   <xs:complexType name="CourseDetails">
     <xs:sequence>

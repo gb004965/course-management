@@ -3,6 +3,7 @@ package com.in28minutes.soap.webservices.soapcoursemanagement.soap;
 import com.in28minutes.courses.*;
 import com.in28minutes.soap.webservices.soapcoursemanagement.soap.bean.Course;
 import com.in28minutes.soap.webservices.soapcoursemanagement.soap.service.CourseDetailsService;
+import com.in28minutes.soap.webservices.soapcoursemanagement.soap.service.CourseDetailsServiceImpl.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -74,11 +75,19 @@ public class CourseDetailsEndPoint {
     @ResponsePayload
     public DeleteCourseDetailsResponse deleteCourseDetailsRequest
             (@RequestPayload DeleteCourseDetailsRequest request) {
-
+        Status status = service.deleteById(request.getId());
         DeleteCourseDetailsResponse response = new DeleteCourseDetailsResponse();
-        response.setDeletionResult(service.deleteById(request.getId()));
+        response.setStatus(mapStatus(status));
 
         return response;
+    }
+
+    private com.in28minutes.courses.Status mapStatus(Status status) {
+        if (status==Status.FAILURE) {
+            return com.in28minutes.courses.Status.FAILURE;
+        } else {
+            return com.in28minutes.courses.Status.SUCCESS;
+        }
     }
 
 

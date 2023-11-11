@@ -5,6 +5,7 @@ import com.in28minutes.soap.webservices.soapcoursemanagement.soap.bean.Course;
 import java.util.List;
 
 public interface CourseDetailsService {
+
     // 3 services
     // course - 1
     // findById()
@@ -16,5 +17,5 @@ public interface CourseDetailsService {
 
     // delete course
     // deleteById
-    public int deleteById(int id);
+    public CourseDetailsServiceImpl.Status deleteById(int id);
 }
