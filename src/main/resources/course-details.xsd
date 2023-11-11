@@ -39,7 +39,8 @@
   <xs:element name="DeleteCourseDetailsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="DeletionResult" type="xs:int"/>
+        <!-- 1 for success, 0 for failure -->
+        <xs:element name="status" type="xs:int"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>

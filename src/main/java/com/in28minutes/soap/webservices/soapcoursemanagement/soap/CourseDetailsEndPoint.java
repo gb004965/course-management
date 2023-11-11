@@ -72,7 +72,7 @@ public class CourseDetailsEndPoint {
 
     @PayloadRoot(namespace = "http://in28minutes.com/courses", localPart = "DeleteCourseDetailsRequest")
     @ResponsePayload
-    public DeleteCourseDetailsResponse processDeleteCourseDetails
+    public DeleteCourseDetailsResponse deleteCourseDetailsRequest
             (@RequestPayload DeleteCourseDetailsRequest request) {
 
         DeleteCourseDetailsResponse response = new DeleteCourseDetailsResponse();
